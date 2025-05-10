@@ -1,0 +1,28 @@
+@startuml
+title Data Pipeline
+footer Disponível em https://github.com/caiquefirefox/dbre-mackenzie-lab01
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+LAYOUT_LANDSCAPE()
+
+Person(user, "Usuário")
+
+System_Boundary(oltp, "oltp"){
+    Container(frontend, "Frontend", "Angular", "WepApp de interação")
+    Container(api, "API", "Java")
+    ContainerDb(db, "Database", "Oracle")
+}
+
+System_Boundary(olap, "olap"){
+    Container(job, "Ingestão de Dados")
+    ContainerDb(dw, "DataWarehouse", "BigQuery/SnowFlake/Redshift/Exadata")
+    Rel(job, dw, "Salvar dados da origem")
+}
+
+Rel(user, frontend, "Realizar pedidos")
+Rel(frontend, api, "Consumir endpoints")
+Rel(api, db, "Persistir dados")
+Rel(db, job, "Carregar dados da origem")
+
+@enduml
