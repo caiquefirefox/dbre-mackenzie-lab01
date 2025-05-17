@@ -7,6 +7,7 @@ footer Disponível em https://github.com/caiquefirefox/dbre-mackenzie-lab01
 LAYOUT_LANDSCAPE()
 
 Person(user, "Usuário")
+Person(user_business, "Usuário de negócios")
 
 System_Boundary(oltp, "oltp"){
     Container(frontend, "Frontend", "Angular", "WepApp de interação")
@@ -14,15 +15,46 @@ System_Boundary(oltp, "oltp"){
     ContainerDb(db, "Database", "Oracle")
 }
 
+System_Boundary(data_sources, "Fonte de dados externas"){
+    Container(ibge, "API IBGE")
+    ContainerDb(correio, "Geo", "csv")
+    ContainerDb(erp, "ERP", "SQL Server", "Protheus")
+    ContainerQueue(iot, "Sensores", "Armazem de distribuição")
+    Container(scraping, "Web scraping")
+    Container(pdf, "PDF's")
+}
+
 System_Boundary(olap, "olap"){
-    Container(job, "Ingestão de Dados")
+    Container(extraction, "Ingestão de Dados")
     ContainerDb(dw, "DataWarehouse", "BigQuery/SnowFlake/Redshift/Exadata")
-    Rel(job, dw, "Salvar dados da origem")
+    ContainerDb(object_storage, "S3/Blob/GCS/Minio", "Object Storage")
+    
+    Container(transformation, "Transformação de dados")
+    
+    Rel(extraction, dw, "Salvar dados da origem")
+    Rel(extraction, object_storage, "Salvar arquivos")
+    Rel(dw, transformation, "Transformar dados")
+    Rel(object_storage, transformation, "Transformar dados")
+}
+
+System_Boundary(analytics, "Analytics"){
+    Container(dataviz, "PowerBi/Tableau", "Data Viz")
+    Container(ml, "Machine Learning", "Predições/Segmentações")
 }
 
 Rel(user, frontend, "Realizar pedidos")
+Rel(user_business, dataviz, "Obter insights")
+
 Rel(frontend, api, "Consumir endpoints")
 Rel(api, db, "Persistir dados")
-Rel(db, job, "Carregar dados da origem")
+Rel(db, extraction, "Carregar dados da origem")
+Rel(ibge, extraction, "Carregar dados da origem")
+Rel(correio, extraction, "Carregar dados da origem")
+Rel(iot, extraction, "Carregar dados da origem")
+Rel(erp, extraction, "Carregar dados da origem")
+Rel(scraping, extraction, "Carregar dados da origem")
+Rel(pdf, extraction, "Carregar dados da origem")
+Rel(dw, dataviz, "Alimentar dados para dashboards e insights")
+BiRel(dw, ml, "Treinar modelos de machine learning")
 
 @enduml
