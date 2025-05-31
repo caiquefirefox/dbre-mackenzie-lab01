@@ -1,1 +1,18 @@
-infra/.terraform
+# Diretórios locais do Terraform
+**/.terraform/*
+
+# Arquivos de estado do Terraform
+*.tfstate
+*.tfstate.*
+
+# Arquivos de log de falhas
+crash.log
+crash.*.log
+
+# Arquivos de variáveis
+*.tfvars
+*.tfvars.json
+
+# Arquivos de configuração do Terraform CLI
+.terraformrc
+terraform.rc
