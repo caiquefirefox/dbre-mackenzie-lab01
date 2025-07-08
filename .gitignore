@@ -16,3 +16,5 @@ crash.*.log
 # Arquivos de configuração do Terraform CLI
 .terraformrc
 terraform.rc
+
+**/venv/*

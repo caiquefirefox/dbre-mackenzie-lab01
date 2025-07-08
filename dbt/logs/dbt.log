@@ -1,0 +1,210 @@
+[0m18:47:16.166142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7360efa30350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7360f1ba0d70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7360efa30380>]}
+
+
+============================== 18:47:16.170801 | d1aea9ff-f75f-4d3d-9e90-4802b0c6b2f0 ==============================
+[0m18:47:16.170801 [info ] [MainThread]: Running with dbt=1.10.2
+[0m18:47:16.171621 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init study_dbt --profiles-dir=/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m18:47:16.181870 [debug] [MainThread]: Starter project path: /workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m18:47:16.185973 [info ] [MainThread]: 
+Your new dbt project "study_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:47:16.186663 [info ] [MainThread]: Setting up your profile.
+[0m18:48:37.627695 [error] [MainThread]: Encountered an error:
+
+[0m18:48:37.630537 [error] [MainThread]: Traceback (most recent call last):
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m18:48:37.632532 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 81.55294, "process_in_blocks": "200", "process_kernel_time": 0.166225, "process_mem_max_rss": "103012", "process_out_blocks": "80", "process_user_time": 1.553144}
+[0m18:48:37.633345 [debug] [MainThread]: Command `dbt init` failed at 18:48:37.633226 after 81.55 seconds
+[0m18:48:37.634080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7360eff592b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7360ef0884d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7360ef11d7c0>]}
+[0m18:48:37.634937 [debug] [MainThread]: Flushing usage events
+[0m18:48:37.728285 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:49:14.432174 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753d386d3890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753d366a6d20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753d366a77a0>]}
+
+
+============================== 18:49:14.435623 | a159d448-7b1e-4214-a1c5-88bd46a2370d ==============================
+[0m18:49:14.435623 [info ] [MainThread]: Running with dbt=1.10.2
+[0m18:49:14.436435 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'static_parser': 'True', 'invocation_command': 'dbt init study_dbt --profiles-dir=/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:49:14.446445 [debug] [MainThread]: Starter project path: /workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m18:49:14.450461 [info ] [MainThread]: 
+Your new dbt project "study_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:49:14.451146 [info ] [MainThread]: Setting up your profile.
+[0m18:53:31.668154 [error] [MainThread]: Encountered an error:
+
+[0m18:53:31.671293 [error] [MainThread]: Traceback (most recent call last):
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m18:53:31.672617 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 257.3029, "process_in_blocks": "0", "process_kernel_time": 0.175879, "process_mem_max_rss": "103676", "process_out_blocks": "80", "process_user_time": 1.486795}
+[0m18:53:31.673399 [debug] [MainThread]: Command `dbt init` failed at 18:53:31.673281 after 257.30 seconds
+[0m18:53:31.673916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753d35c8ba40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753d362c53d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x753d35d496a0>]}
+[0m18:53:31.674808 [debug] [MainThread]: Flushing usage events
+[0m18:53:31.772367 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:53:52.015217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7358747cd100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x735874f393a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x735874dd73e0>]}
+
+
+============================== 18:53:52.018736 | 665b3da9-b484-42f5-8902-5ba04c5d09f6 ==============================
+[0m18:53:52.018736 [info ] [MainThread]: Running with dbt=1.10.2
+[0m18:53:52.019602 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init study_dbt --profiles-dir=/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:53:52.029847 [debug] [MainThread]: Starter project path: /workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m18:53:52.033839 [info ] [MainThread]: 
+Your new dbt project "study_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:53:52.034501 [info ] [MainThread]: Setting up your profile.
+[0m18:54:17.735638 [error] [MainThread]: Encountered an error:
+
+[0m18:54:17.738946 [error] [MainThread]: Traceback (most recent call last):
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 161, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 111, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/cli/main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/task/init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/click/termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m18:54:17.740333 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 25.785799, "process_in_blocks": "0", "process_kernel_time": 0.177464, "process_mem_max_rss": "102924", "process_out_blocks": "72", "process_user_time": 1.522403}
+[0m18:54:17.740947 [debug] [MainThread]: Command `dbt init` failed at 18:54:17.740832 after 25.79 seconds
+[0m18:54:17.741511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7358747cd100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7358743f45c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7358748ddd30>]}
+[0m18:54:17.742189 [debug] [MainThread]: Flushing usage events
+[0m18:54:17.812350 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:54:33.612667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bad6a2c32f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bad66f814f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bad674fb8f0>]}
+
+
+============================== 18:54:33.616141 | 327d3eed-3c12-4f2b-92c5-6de9205303a5 ==============================
+[0m18:54:33.616141 [info ] [MainThread]: Running with dbt=1.10.2
+[0m18:54:33.616948 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init study_dbt --profiles-dir=/workspaces/dbre-mackenzie-lab01/dbt/profiles', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'send_anonymous_usage_stats': 'True'}
+[0m18:54:33.627138 [debug] [MainThread]: Starter project path: /workspaces/dbre-mackenzie-lab01/dbt/venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m18:54:33.631174 [info ] [MainThread]: 
+Your new dbt project "study_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:54:33.631800 [info ] [MainThread]: Setting up your profile.
+[0m18:55:18.772610 [info ] [MainThread]: Profile study_dbt written to /workspaces/dbre-mackenzie-lab01/dbt/profiles/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:55:18.774568 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 45.221725, "process_in_blocks": "0", "process_kernel_time": 0.197254, "process_mem_max_rss": "102964", "process_out_blocks": "80", "process_user_time": 1.479412}
+[0m18:55:18.775230 [debug] [MainThread]: Command `dbt init` succeeded at 18:55:18.775111 after 45.22 seconds
+[0m18:55:18.775757 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bad66b60ec0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bad6a2c32f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7bad66538530>]}
+[0m18:55:18.776337 [debug] [MainThread]: Flushing usage events
+[0m18:55:18.942803 [debug] [MainThread]: An error was encountered while trying to flush usage events
